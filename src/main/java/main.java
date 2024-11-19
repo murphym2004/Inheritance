@@ -10,23 +10,27 @@ public class main {
         System.out.println("enter your number");
         String phone = scan.nextLine();
         System.out.println("please enter customer number");
-        String custnum = scan.nextLine();
+        int custnum = Integer.parseInt(scan.nextLine());
         System.out.println("do you want to be on the mailing list");
         boolean list = scan.hasNextBoolean();
 
-        Customer newcust = new Customer(name,address,phone,custnum,list);
-        System.out.println("you entered "+ newcust.toString());
+        // Create a Customer instance
+        Customer newcust = new Customer(name, address, phone, custnum, list);
+        System.out.println("You entered: ");
+        System.out.println(newcust);
 
-        ExtendCustomer preferedcustomer = new ExtendCustomer();
-       preferedcustomer.setLoyaltypoints(600);
-        System.out.println(preferedcustomer);
+        // Create and test PreferredCustomer
+        ExtendCustomer preferredCustomer2 = new ExtendCustomer("Paul", "ATU", "091 775678", 1002, false);
+
+        // Add loyalty points and display
+        preferredCustomer2.addLoyaltyPoints(700);
+        System.out.println(preferredCustomer2);
+
+        preferredCustomer2.addLoyaltyPoints(800);
+        System.out.println(preferredCustomer2);
+        scan.close();
 
 
-        if (preferedcustomer > 500 && preferedcustomer > 1000){
-            preferedcustomer.setCustomerDiscountLevel(5);
-            System.out.println(preferedcustomer);
-            System.out.println("your discount is " + preferedcustomer);
-
-        }
     }
-}
+    }
+

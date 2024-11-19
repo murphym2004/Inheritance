@@ -1,14 +1,14 @@
 public class Customer extends Person{
-    private String custNumber;
+    private int custNumber;
     private boolean mailinglist;
 
     public Customer()
     {
-        this.custNumber = "";
+        this.custNumber = Integer.parseInt("");
         this.mailinglist = false;
     }
 
-    public Customer(String name, String address, String phone, String custNumber, boolean mailinglist) {
+    public Customer(String name, String address, String phone, int custNumber, boolean mailinglist) {
         super(name, address, phone);
         this.custNumber = custNumber;
         this.mailinglist = mailinglist;
